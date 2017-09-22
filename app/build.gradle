@@ -25,7 +25,7 @@ android {
         }
     }
 
-    applicationVariants.all {
+    /*applicationVariants.all {
         variant ->
             variant.outputs.each { output ->
                 boolean sr = variant.isSigningReady()
@@ -35,7 +35,7 @@ android {
                     addAssembleInfo(sr, flavorName, buildType, output.outputFile)
                 }
             }
-    }
+    }*/
 }
 
 dependencies {
