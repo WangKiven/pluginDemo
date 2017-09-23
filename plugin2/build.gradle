@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'groovy'// groovy配置，不用可删除
+apply plugin: 'maven'
+
+
+group = "com.kiven.plugin2"//project属性
+version = "1.0"//project属性
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //导入Gradle的api，要写插件，肯定要使用Gradle的api
+    compile gradleApi()
+    compile localGroovy()
+
+}
+
+apply from: '../publish.gradle'

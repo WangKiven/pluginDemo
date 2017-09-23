@@ -1,0 +1,21 @@
+/*
+apply plugin: "com.gradle.plugin-publish"
+pluginBundle {
+    website = 'http://www.gradle.org/'
+    vcsUrl = 'https://github.com/gradle/gradle'
+    description = 'Greetings from here!'
+    tags = ['greetings', 'salutations']
+
+    plugins {
+        greetingsPlugin {
+            id = 'com.kiven.plugindemo'
+            displayName = 'Gradle Greeting plugin'
+        }
+    }
+}*/
+
+task("say hello"){
+    doLast {
+        println("Hello $project.name, you are a project.")
+    }
+}

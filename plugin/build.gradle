@@ -6,7 +6,6 @@ apply plugin: 'maven'
 uploadArchives{
     //本地仓库的一种
     repositories{
-//        mavenLocal()
         flatDir{
             name "localRepository"
             dir "localRepository/libs"
@@ -28,4 +27,27 @@ version = "1.0"//project属性
 /*sourceCompatibility = "1.7"
 targetCompatibility = "1.7"*/
 
+// 上传maven配置
 apply from: 'bintray.gradle'
+
+// 上传gradle官网配置
+// 插件配置上传参考文档：https://plugins.gradle.org/docs/submit
+// gradle官方插件查询地址：https://plugins.gradle.org/
+apply plugin: "com.gradle.plugin-publish"
+pluginBundle {
+    website = 'http://www.gradle.org/'
+    vcsUrl = 'https://github.com/gradle/gradle'
+    description = 'Greetings from here!'
+    tags = ['greetings', 'salutations']
+
+    plugins {
+        myPlugin {
+            id = 'com.kiven.plugindemo'
+            displayName = 'Gradle Greeting plugin'
+        }
+    }
+}
+ext.id = "com.kiven.plugin"
+println("id ====== ${id}")
+
+apply from: '../publish.gradle'

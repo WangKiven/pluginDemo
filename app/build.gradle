@@ -25,17 +25,17 @@ android {
         }
     }
 
-    /*applicationVariants.all {
+    applicationVariants.all {
         variant ->
             variant.outputs.each { output ->
                 boolean sr = variant.isSigningReady()
                 String flavorName = variant.flavorName
                 String buildType = variant.buildType.name
                 myExt {
-                    addAssembleInfo(sr, flavorName, buildType, output.outputFile)
+                    addAssembleInfo(sr, flavorName, buildType, output.outputFile, null)
                 }
             }
-    }*/
+    }
 }
 
 dependencies {

@@ -37,4 +37,9 @@ public class MyExt {
         map.put("assemble" + flavorName + buildType,
                 new AssembleInfo(isSigningReady, outputFile, flavorName, buildType, subDir));
     }
+
+    public void addAssembleInfo(boolean isSigningReady, String flavorName, String buildType, File outputFile) {
+        map.put("assemble" + flavorName + buildType,
+                new AssembleInfo(isSigningReady, outputFile, flavorName, buildType, null));
+    }
 }

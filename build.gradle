@@ -4,19 +4,23 @@ buildscript {
     ext.kotlin_version = '1.1.4-2'
     repositories {
         /* 自定义插件 */
-//        mavenLocal()
         flatDir  name:'localRepository',dir:'plugin/localRepository/libs'
         /*google()
         jcenter()*/
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
-        google()
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+//        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         /* maven 仓库构建用*/
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        /* 上传gradle官网配置 */
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
         /* 自定义插件 */
         classpath 'com.kiven.plugin:plugin:1.0'
     }
@@ -27,7 +31,7 @@ allprojects {
         /*google()
         jcenter()*/
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
-        google()
+//        google()
     }
 }
 
