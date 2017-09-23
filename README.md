@@ -18,4 +18,5 @@ BINTRAY_KEY=****************
 - 执行`plugin`的任务`tasks` -> `publishing` -> `bintrayUpload`
 - 打开jcenter网站，发布
 ### 上传到gradle
-- [参考官方文档](https://plugins.gradle.org/docs/submit)
+- 配置可参考[官方文档](https://plugins.gradle.org/docs/submit)
+- 执行`plugin`的任务`tasks` -> `plugin portal` -> `publishPlugins`
