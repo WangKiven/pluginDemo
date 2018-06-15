@@ -50,6 +50,6 @@ class ExtMPlugin implements Plugin<Project> {
                     }
                 }
         }
-        project.apply from : 'config.gradle'
+//        project.apply from : 'config.gradle'
     }
 }

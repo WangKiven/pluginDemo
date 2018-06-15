@@ -20,6 +20,13 @@ dependencies {
     compile localGroovy()
 }
 
+/**
+ * 支持 utf-8
+ */
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
 
 group = "com.kiven.plugin"//project属性
 version = "1.0"//project属性
